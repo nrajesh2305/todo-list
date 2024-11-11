@@ -9,3 +9,51 @@ body
     padding: 0;
     font-family: var(--system-ui);
 }
+
+.global_container
+{
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "task-list-area add-task-area"
+                         "task-list-area motivation-area";
+    width: 100vw;
+    height: 100vh;
+}
+
+.task_list_container
+{
+    grid-area: task-list-area;
+    background-color: #ADD8E6;
+}
+
+.add_task_container
+{
+    grid-area: add-task-area;
+    background-color: #c4a484;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add_task_fillout
+{
+    width: 90%;
+    height: 90%;
+    border-color: #231709;
+    background-color: #d4c0ad;
+    border-radius: 25px;
+    border: 5px solid #231709;
+}
+
+.motivational_message
+{
+    display: flex;
+    grid-area: motivation-area;
+    background-color: lightyellow;
+    border-left: 2px solid black;
+    justify-content: center;
+    align-items: center;
+}
