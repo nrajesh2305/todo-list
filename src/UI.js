@@ -31,8 +31,23 @@ export class UI
         
         // UI for add_task_container.
         let add_task_fillout = document.createElement("div");
+        let add_task_title = document.createElement("h2");
+        let task_name_section = document.createElement("div");
+        let add_task_button = document.createElement("button");
+
+        add_task_title.className = "add_task_title";
+        add_task_title.innerText = "ADD TASK";
+
         add_task_fillout.className = "add_task_fillout";
+        task_name_section.className = "task_name_section";
+
+        add_task_button.className = "add_task_button";
+        add_task_button.textContent = "ADD";
+
         add_task_container.append(add_task_fillout);
+        add_task_fillout.append(add_task_title);
+        add_task_fillout.append(task_name_section);
+        add_task_fillout.append(add_task_button);
 
     }
 }

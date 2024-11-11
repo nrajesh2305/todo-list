@@ -40,12 +40,69 @@ body
 
 .add_task_fillout
 {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: 1fr;
+    grid-template-areas: "add_task_title"
+                         "task_name"
+                         "task_due_date"
+                         "task_priority"
+                         "add_task_button";
     width: 90%;
     height: 90%;
     border-color: #231709;
     background-color: #d4c0ad;
     border-radius: 25px;
     border: 5px solid #231709;
+}
+
+h2.add_task_title
+{
+    grid-area: add_task_title;
+    font-size: clamp(1.25rem, 4vw, 1.75rem);
+    justify-self: center;
+    align-self: center;
+}
+
+.task_name_section
+{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "task_name_label task_name_input";
+    grid-template-rows: 1fr;
+}
+
+label.task_name_label
+{
+    grid-area: task_name_label;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+}
+
+.task_name_input
+{
+    grid-area: task_name_input;
+}
+
+button.add_task_button
+{
+    grid-area: add_task_button;
+    display: flex;
+    font-weight: bold;
+    font-size: medium;
+    justify-self: flex-end;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    width: 25%;
+    height: 50%;
+    background-color: #5bb3d1;
+    border-radius: 10px;
+    border: 2px solid black;
+    cursor: pointer;
+    margin-right: 1em;
 }
 
 .motivational_message
