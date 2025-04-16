@@ -30,10 +30,46 @@ body
 .todo-change-mode_container
 {
     grid-area: change-mode_container;
-    border-top: 2px solid black;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "checklist_mode todolist_mode notes_mode";
+    background-color: #a8a8a8;
+    border-top: 2px solid black;
+}
+
+.checklist_mode
+{
+    grid-area: checklist_mode;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+    font-size: 1.5rem;
+}
+
+.todolist_mode
+{
+    grid-area: todolist_mode;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.notes_mode
+{
+    grid-area: notes_mode;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.checklist_mode:hover, .todolist_mode:hover, .notes_mode:hover
+{
+    background-color: #888888;
+    transition: 25ms;
+    cursor: pointer;
 }
 
 .add_task_container

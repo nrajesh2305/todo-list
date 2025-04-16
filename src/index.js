@@ -32,6 +32,22 @@ export class UI
         global_container.append(add_task_container);
         global_container.append(motivation);
         global_container.append(change_mode_container);
+
+
+        let todo_list_mode = document.createElement("div");
+        let checklist_mode = document.createElement("div");
+        let notes_mode = document.createElement("div");
+
+        todo_list_mode.className = "todolist_mode";
+        todo_list_mode.textContent = "TODO LIST";
+        checklist_mode.className = "checklist_mode";
+        checklist_mode.textContent = "CHECKLIST";
+        notes_mode.className = "notes_mode";
+        notes_mode.textContent = "NOTES";
+
+        change_mode_container.append(todo_list_mode);
+        change_mode_container.append(checklist_mode);
+        change_mode_container.append(notes_mode);
         
         // UI for add_task_container.
         let add_task_fillout = document.createElement("div");
