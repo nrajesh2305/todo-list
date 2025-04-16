@@ -18,17 +18,20 @@ export class UI
         let global_container = document.createElement("div");
         let add_task_container = document.createElement("div");
         let task_list_container = document.createElement("div");
+        let change_mode_container = document.createElement("div");
         let motivation = document.createElement("div");
 
         global_container.className = "global_container";
         add_task_container.className = "add_task_container";
         task_list_container.className = "task_list_container";
+        change_mode_container.className = "todo-change-mode_container";
         motivation.className = "motivational_message";
 
         document.body.append(global_container);
         global_container.append(task_list_container);
         global_container.append(add_task_container);
         global_container.append(motivation);
+        global_container.append(change_mode_container);
         
         // UI for add_task_container.
         let add_task_fillout = document.createElement("div");
