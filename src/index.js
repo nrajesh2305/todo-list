@@ -38,6 +38,10 @@ export class UI
         let checklist_mode = document.createElement("div");
         let notes_mode = document.createElement("div");
 
+        let todo_list_mode_active = true;
+        let checklist_mode_active = false;
+        let notes_mode_active = false;
+
         todo_list_mode.className = "todolist_mode";
         todo_list_mode.textContent = "TODO LIST";
         checklist_mode.className = "checklist_mode";
@@ -48,6 +52,45 @@ export class UI
         change_mode_container.append(todo_list_mode);
         change_mode_container.append(checklist_mode);
         change_mode_container.append(notes_mode);
+
+        todo_list_mode.addEventListener("click", () =>
+        {
+            if(!checklist_mode_active || !notes_mode_active)
+            {
+                todo_list_mode.style.backgroundColor = "#888888";
+                checklist_mode.style.backgroundColor = "#a8a8a8";
+                notes_mode.style.backgroundColor = "#a8a8a8";
+                todo_list_mode_active = true;
+                notes_mode_active = false;
+                checklist_mode_active = false;
+            }
+        })
+
+        checklist_mode.addEventListener("click", () =>
+        {
+            if(!todo_list_mode_active || !notes_mode_active)
+            {
+                todo_list_mode.style.backgroundColor = "#a8a8a8";
+                checklist_mode.style.backgroundColor = "#888888";
+                notes_mode.style.backgroundColor = "#a8a8a8";
+                todo_list_mode_active = false;
+                notes_mode_active = false;
+                checklist_mode_active = true;
+            }
+        })
+
+        notes_mode.addEventListener("click", () =>
+        {
+            if(!todo_list_mode_active || !checklist_mode_active)
+            {
+                todo_list_mode.style.backgroundColor = "#a8a8a8";
+                checklist_mode.style.backgroundColor = "#a8a8a8";
+                notes_mode.style.backgroundColor = "#888888";
+                todo_list_mode_active = false;
+                notes_mode_active = true;
+                checklist_mode_active = false;   
+            }
+        })
         
         // UI for add_task_container.
         let add_task_fillout = document.createElement("div");
